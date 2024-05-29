@@ -10,9 +10,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const canvas = document.getElementById("phCanvas");
     const ctx = canvas.getContext("2d");
 
-    phSlider.value = 70; // Initial value for pH slider (7.0)
-    pka1Slider.value = 23; // Initial value for pKa1 slider (2.3)
-    pka2Slider.value = 97; // Initial value for pKa2 slider (9.7)
+    const images = {};
+    const imageFiles = [
+        'alaR1.jpg', 'alaR2.jpg', 'alaR3.jpg',
+        'acid_h.jpg', 'acid_an.jpg', 'base_h.jpg', 'base_an.jpg'
+    ];
+    let loadedImagesCount = 0;
+
+    function loadImages(callback) {
+        imageFiles.forEach(imageFile => {
+            const img = new Image();
+            img.src = imageFile;
+            img.onload = () => {
+                images[imageFile] = img;
+                loadedImagesCount++;
+                if (loadedImagesCount === imageFiles.length) {
+                    callback();
+                }
+            };
+        });
+    }
 
     function updateValues() {
         const ph = phSlider.value / 10;
@@ -64,11 +81,20 @@ document.addEventListener("DOMContentLoaded", function () {
         ctx.fillText(h2a.toFixed(1), 510, 125);
         ctx.fillText(zwit.toFixed(1), 610, 125);
         ctx.fillText(a2.toFixed(1), 710, 125);
+
+        ctx.drawImage(images['alaR1.jpg'], 485, 5, 50, 50);
+        ctx.drawImage(images['alaR2.jpg'], 585, 5, 50, 50);
+        ctx.drawImage(images['alaR3.jpg'], 685, 5, 50, 50);
+
+        ctx.drawImage(images['acid_h.jpg'], 85, 55, 50, 50);
+        ctx.drawImage(images['acid_an.jpg'], 185, 55, 50, 50);
+        ctx.drawImage(images['base_h.jpg'], 305, 55, 50, 50);
+        ctx.drawImage(images['base_an.jpg'], 405, 55, 50, 50);
     }
 
     phSlider.addEventListener("input", updateValues);
     pka1Slider.addEventListener("input", updateValues);
     pka2Slider.addEventListener("input", updateValues);
 
-    updateValues(); // Initial draw
+    loadImages(updateValues);
 });
