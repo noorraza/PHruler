@@ -4,59 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>pH Ruler Web Application</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      color: #007BFF;
+      background-color: #f8f9fa;
     }
     .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: white;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
+      margin-top: 50px;
+      text-align: center;
     }
-    .links {
-      list-style: none;
-      padding: 0;
-    }
-    .links li {
-      margin: 15px 0;
-    }
-    .links a {
-      text-decoration: none;
-      color: #007BFF;
-      font-size: 18px;
-      transition: color 0.3s;
-    }
-    .links a:hover {
-      color: #0056b3;
-    }
-    hr {
-      margin: 20px 0;
-      border: 0;
-      height: 1px;
-      background: #ddd;
+    .btn {
+      margin: 20px;
     }
   </style>
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">pH Ruler</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="pHruler.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pHdiprotic/pHruler_diprotic.html">Diprotic</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pHtriprotic/pHruler_triprotic.html">Triprotic</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <div class="container">
-    <h1>Welcome to the pH Ruler Web Application!</h1>
-    <hr>
-    <p>Please click on one of the two following links to begin using the pH ruler for either diprotic or triprotic amino acids:</p>
-    <ul class="links">
-      <li><a href="pHdiprotic/pHdiprotic.html">pH Ruler for Diprotic Amino Acids</a></li>
-      <li><a href="pHtriprotic/pHtriprotic.html">pH Ruler for Triprotic Amino Acids</a></li>
-    </ul>
-    <hr>
+    <h1 class="display-4">Welcome to the pH Ruler Web Application!</h1>
+    <p class="lead">Please click on one of the buttons below to begin using the pH ruler for either diprotic or triprotic amino acids:</p>
+    <hr class="my-4">
+    <div class="d-flex justify-content-center">
+      <a href="pHdiprotic/pHruler_diprotic.html" class="btn btn-primary btn-lg">pH Ruler for Diprotic Amino Acids</a>
+      <a href="pHtriprotic/pHruler_triprotic.html" class="btn btn-success btn-lg">pH Ruler for Triprotic Amino Acids</a>
+    </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
