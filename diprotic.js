@@ -82,9 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
         ctx.fillText(zwit.toFixed(1), 610, 125);
         ctx.fillText(a2.toFixed(1), 710, 125);
 
-        ctx.drawImage(images['alaR1.jpg'], 485, 5, 50, 50);
-        ctx.drawImage(images['alaR2.jpg'], 585, 5, 50, 50);
-        ctx.drawImage(images['alaR3.jpg'], 685, 5, 50, 50);
+        ctx.drawImage(images['alaR1.jpg'], 485, 55, 50, 50);
+        ctx.drawImage(images['alaR2.jpg'], 590, 55, 50, 50);
+        ctx.drawImage(images['alaR3.jpg'], 685, 55, 50, 50);
 
         ctx.drawImage(images['acid_h.jpg'], 85, 55, 50, 50);
         ctx.drawImage(images['acid_an.jpg'], 185, 55, 50, 50);

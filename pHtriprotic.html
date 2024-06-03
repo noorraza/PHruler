@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pH Ruler Triprotic</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .slider-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .slider-label {
+      margin: 5px;
+    }
+    .slider {
+      width: 80%;
+      margin: 5px;
+    }
+    canvas {
+      border: 1px solid black;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <label class="slider-label" for="ph1Slider">pH: <span id="ph1Value">7.4</span></label>
+    <input type="range" id="ph1Slider" class="slider" min="0" max="140" value="74">
+    <label class="slider-label" for="pka1Slider">pKa1: <span id="pka1Value">2.3</span></label>
+    <input type="range" id="pka1Slider" class="slider" min="0" max="140" value="23">
+    <label class="slider-label" for="pka2Slider">pKa2: <span id="pka2Value">2.9</span></label>
+    <input type="range" id="pka2Slider" class="slider" min="0" max="140" value="29">
+    <label class="slider-label" for="pka3Slider">pKa3: <span id="pka3Value">9.7</span></label>
+    <input type="range" id="pka3Slider" class="slider" min="0" max="140" value="97">
+  </div>
+  <canvas id="chart" width="1200" height="300"></canvas>
+  <script src="triprotic.js"></script>
+</body>
+</html>
