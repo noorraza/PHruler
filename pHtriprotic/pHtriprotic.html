@@ -3,10 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>pH Ruler Triprotic</title>
+  <title>pH Ruler for Triprotic Amino Acids</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #007BFF;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
     }
     .slider-container {
       display: flex;
@@ -27,17 +42,24 @@
   </style>
 </head>
 <body>
-  <div class="slider-container">
-    <label class="slider-label" for="ph1Slider">pH: <span id="ph1Value">7.4</span></label>
-    <input type="range" id="ph1Slider" class="slider" min="0" max="140" value="74">
-    <label class="slider-label" for="pka1Slider">pKa1: <span id="pka1Value">2.3</span></label>
-    <input type="range" id="pka1Slider" class="slider" min="0" max="140" value="23">
-    <label class="slider-label" for="pka2Slider">pKa2: <span id="pka2Value">2.9</span></label>
-    <input type="range" id="pka2Slider" class="slider" min="0" max="140" value="29">
-    <label class="slider-label" for="pka3Slider">pKa3: <span id="pka3Value">9.7</span></label>
-    <input type="range" id="pka3Slider" class="slider" min="0" max="140" value="97">
+  <div class="container">
+    <h1>Welcome to the pH Ruler for Triprotic Amino Acids!</h1>
+    <hr>
+    <p>Drag the pH slider and note how the percentages of acid and base forms of the carboxylate, amino, and side chain groups change.</p>
+    <p>Also note how the percentages of the positively charged, zwitterionic, and negatively charged forms vary as a function of pH.</p>
+    <hr>
+    <div class="slider-container">
+      <label class="slider-label" for="ph1Slider">pH: <span id="ph1Value">7.4</span></label>
+      <input type="range" id="ph1Slider" class="slider" min="0" max="140" value="74">
+      <label class="slider-label" for="pka1Slider">pKa1: <span id="pka1Value">2.3</span></label>
+      <input type="range" id="pka1Slider" class="slider" min="0" max="140" value="23">
+      <label class="slider-label" for="pka2Slider">pKa2: <span id="pka2Value">2.9</span></label>
+      <input type="range" id="pka2Slider" class="slider" min="0" max="140" value="29">
+      <label class="slider-label" for="pka3Slider">pKa3: <span id="pka3Value">9.7</span></label>
+      <input type="range" id="pka3Slider" class="slider" min="0" max="140" value="97">
+    </div>
+    <canvas id="chart" width="1200" height="420"></canvas>
   </div>
-  <canvas id="chart" width="1200" height="300"></canvas>
   <script src="triprotic.js"></script>
 </body>
 </html>
